@@ -1,0 +1,146 @@
+<div class="submit-form">
+  <div *ngIf="!submitted">
+    <div class="form-group">
+      <label for="title">ID</label>
+      <input
+        type="text"
+        class="form-control"
+        id="title"
+        required
+        [(ngModel)]="clientModel.Cliente_ID"
+        name="title"
+      />
+    </div>
+
+    <div class="form-group">
+      <label for="description">Usuario</label>
+      <input
+        class="form-control"
+        id="description"
+        required
+        [(ngModel)]="clientModel.Nombre_Usuario"
+        name="description"
+      />
+    </div>
+    
+    <div class="form-group">
+      <label for="description">Contraseña</label>
+      <input
+        class="password form-control"
+        id="description"
+        required
+        [(ngModel)]="clientModel.Contraseña"
+        name="description"
+      />
+    </div>
+    
+    <div class="form-group">
+      <label for="description">Nombre</label>
+      <input
+        class="form-control"
+        id="description"
+        required
+        [(ngModel)]="clientModel.Nombre"
+        name="description"
+      />
+    </div>
+
+    <div class="form-group">
+      <label for="description">Apellidos</label>
+      <input
+        class="form-control"
+        id="description"
+        required
+        [(ngModel)]="clientModel.Apellidos"
+        name="description"
+      />
+    </div>
+
+    <div class="form-group">
+      <label for="description">Correo</label>
+      <input
+        class="form-control"
+        id="description"
+        required
+        [(ngModel)]="clientModel.Correo_Electronico"
+        name="description"
+      />
+    </div>
+
+    <div class="form-group">
+      <label for="description">Edad</label>
+      <input
+        class="form-control"
+        id="description"
+        required
+        [(ngModel)]="clientModel.Edad"
+        name="description"
+      />
+    </div>
+
+    <div class="form-group">
+      <label for="description">Estatura</label>
+      <input
+        class="form-control"
+        id="description"
+        required
+        [(ngModel)]="clientModel.Estatura"
+        name="description"
+      />
+    </div>
+
+    <div class="form-group">
+      <label for="description">Peso</label>
+      <input
+        class="form-control"
+        id="description"
+        required
+        [(ngModel)]="clientModel.Peso"
+        name="description"
+      />
+    </div>
+
+    <div class="form-group">
+      <label for="description">IMC</label>
+      <input
+        class="form-control"
+        id="description"
+        required
+        [(ngModel)]="clientModel.IMC"
+        name="description"
+      />
+    </div>
+
+    <div class="form-group">
+      <label for="description">GEB</label>
+      <input
+        class="form-control"
+        id="description"
+        required
+        [(ngModel)]="clientModel.GEB"
+        name="description"
+      />
+    </div>
+
+    <div class="form-group">
+      <label for="description">ETA</label>
+      <input
+        class="form-control"
+        id="description"
+        required
+        [(ngModel)]="clientModel.ETA"
+        name="description"
+      />
+    </div>
+
+
+    <button (click)="save()" class="btn btn-success">Submit</button>
+  </div>
+
+  <div *ngIf="submitted">
+    <h4>You submitted successfully!</h4>
+    <button class="btn btn-success" (click)="new()">Add</button>
+  </div>
+</div>
+
+

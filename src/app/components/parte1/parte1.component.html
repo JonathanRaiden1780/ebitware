@@ -1,0 +1,94 @@
+<div class="card-group">
+  <form #formguardar="ngForm">
+    <div class="card-group">
+      <div class="card-header form-group ">
+        <p><strong>Nombre</strong></p>
+        <div class="input-group mb-3">
+          <div class="input-group-prepend ">
+            <span class="input-group-text" style="background-color: #f38222; color: white">
+              <i class="fa fa-user"></i> 
+            </span>
+          </div>
+          <input type="text" name="Nombre" [(ngModel)]="Nombre" [ngModelOptions]="{standalone:true}"
+            class="form-control" placeholder=" Nombre ">
+        </div>
+        <p><strong>Edad</strong></p>
+        <div class="input-group mb-3">
+          <div class="input-group-prepend">
+            <span class="input-group-text" style="background-color: #f38222; color: white">
+              <i class="fa fa-birthday-cake"></i>
+            </span>
+          </div>
+          <input type="text" name="Edad" [(ngModel)]="Edad" [ngModelOptions]="{standalone:true}" class="form-control"
+            placeholder="  20 ">
+        </div>
+        <p><strong>NSS</strong></p>
+        <div class="input-group mb-3">
+          <div class="input-group-prepend">
+            <span class="input-group-text" style="background-color: #f38222; color: white">
+              <i class="fa fa-address-card"></i>
+            </span>
+          </div>
+          <input disabled type="text" name="NSS" [(ngModel)]="NSS" [ngModelOptions]="{standalone:true}" class="form-control"
+            placeholder="  NSS ">
+        </div>
+        <p><strong>Sexo</strong></p>
+        <div class="input-group mb-3">
+          <div class="input-group-prepend">
+            <span class="input-group-text" style="background-color: #f38222; color: white">
+              <i class="fa fa-male"></i><i class="fa fa-female"></i>
+            </span>
+          </div>
+          <input type="text" name="Sexo" [(ngModel)]="Sexo" [ngModelOptions]="{standalone:true}" class="form-control"
+            placeholder="  H/M ">
+        </div>
+        <p><strong>Peso</strong></p>
+        <div class="input-group mb-3">
+          <div class="input-group-prepend">
+            <span class="input-group-text" style="background-color: #f38222; color: white">
+              <i class="fa fa-dashboard"></i>
+            </span>
+          </div>
+          <input type="text" name="Peso" [(ngModel)]="Peso" [ngModelOptions]="{standalone:true}" class="form-control"
+            placeholder="  60 ">
+        </div>
+        <p><strong>Altura</strong></p>
+        <div class="input-group mb-3">
+          <div class="input-group-prepend">
+            <span class="input-group-text" style="background-color: #f38222; color: white">
+              <i class="fa fa-male"></i><i class="fa fa-long-arrow-up"></i>
+            </span>
+          </div>
+          <input type="text" name="Altura" [(ngModel)]="Altura" [ngModelOptions]="{standalone:true}"
+            class="form-control" placeholder="  170 ">
+            <div class="input-group-prepend">
+              <span class="input-group-text" style="background-color: #f38222; color: white">
+                CM
+              </span>
+            </div>
+        </div>
+        <button type="button" (click)='addnew()' value="Guardar" style="background-color: #f38222;"
+          class="btn text-center btn-block">
+          <h5 style="color: white;"><strong>Registrar</strong></h5>
+        </button>
+      </div>
+    </div>
+  </form>
+  <div class="col-md-6 mx-auto mt-2">
+    <div class="card mb-3 text-center" style="max-width: 20rem; background-color: gray">
+      <div class="card-header form-group text-white">
+        <p><strong>IMC = {{resultado}}</strong></p>
+        <div class="input-group mb-3">
+          <p *ngIf='fp'>Un IMC = {{resultado}} significa Falta de Peso</p>
+          <p *ngIf='pp'>Un IMC = {{resultado}} significa Peso Normal</p>
+          <p *ngIf='sp'>Un IMC = {{resultado}} significa Sobrepeso</p>
+        </div>
+        <p><strong>{{mayor}}</strong></p>
+      </div>
+      <p><strong>{{leyenda}}</strong></p>
+    </div>
+</div>
+<div class="col-md-6 mx-auto mt-2">
+
+</div>
+</div>

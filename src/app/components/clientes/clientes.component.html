@@ -1,0 +1,42 @@
+<div class="list row">
+  <div class="col-md-8">
+    <div class="input-group mb-3">
+      <input
+        type="text"
+        class="form-control"
+        placeholder="Search by ID"
+        [(ngModel)]="title"
+      />
+      <div class="input-group-append">
+        <button
+          class="btn btn-outline-secondary"
+          type="button"
+          (click)="search()"
+        >
+          Search
+        </button>
+      </div>
+    </div>
+  </div>
+ 
+  <div class="col-md-6">
+    <div >
+      <h4>DATA</h4>
+      <div>
+        <label><strong>ID:</strong></label> {{ list.Client_ID }}
+      </div>
+      <div>
+        <label><strong>User:</strong></label>
+        {{ list.Nombre_Usuario }}
+      </div>
+      <div>
+        <label><strong>Nombre:</strong></label>
+        {{ list.Nombre}}
+      </div>
+
+      <a class="badge badge-warning" href="/clientes/{{ list.Cliente_ID }}">
+        Edit
+      </a>
+    </div>
+  </div>
+</div>
