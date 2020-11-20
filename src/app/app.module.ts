@@ -7,6 +7,8 @@ import { Parte1Component } from './components/parte1/parte1.component';
 import { FormsModule } from '@angular/forms';
 import { Parte2Component } from './components/parte2/parte2.component';
 import { ClientesComponent } from './components/clientes/clientes.component';
+import { ClientserviceService } from './services/clientservice.service';
+import {  HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -18,9 +20,13 @@ import { ClientesComponent } from './components/clientes/clientes.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule
   ],
-  providers: [],
+  entryComponents:[
+    Parte2Component
+  ],
+  providers: [ClientserviceService,],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

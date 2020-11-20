@@ -11,7 +11,9 @@ import { ClientserviceService } from 'src/app/services/clientservice.service';
 export class ClientesComponent implements OnInit {
   list:any;
   id:string;
-  constructor(private clientservice: ClientserviceService, public data: ClienteModel) { }
+  constructor(
+    private clientservice: ClientserviceService
+    ) { }
 
   ngOnInit() {
     this.getdata();
@@ -24,7 +26,7 @@ export class ClientesComponent implements OnInit {
     this.clientservice.findById(this.id).subscribe( data => { this.list = data}, error => {console.log(error)})
   }
   update(){
-    this.clientservice.update(this.id,this.data)
+    this.clientservice.update(this.id,this.list)
   }
   
 

@@ -13,18 +13,33 @@ export class Parte2Component implements OnInit {
   registered = false;
   submitted = false;
   client_id: string;
-	fechaactual:string;
+  fechaactual:string;
+   ClienteModel;
+  ID: string;
+  Usuario: string;
+  Contrasena: string;
+  Nombre : string;
+  Apellidos : string;
+  Correo_Electronico : string;
+  Edad : string;
+  Estatura : string;
+  Peso : string;
+  IMC : string;
+  GEB : string;
+  ETA : string;
   list: any;
-  constructor(private servclient: ClientserviceService, public clientModel: ClienteModel, private http: HttpClient, private routes: Router)
+  dat : any;
+  constructor( private servclient: ClientserviceService, private http: HttpClient, private routes: Router )
   {
-  	this.http.get('/api/v1/generate_uid').subscribe((data:any) => {
+   	this.http.get('/api/v1/generate_uid').subscribe((data:any) => {
       this.client_id = data.client_id;
     }, error => {
         console.log("There was an error generating the proper GUID on the server", error);
-    });
+    }); 
   }
 
   ngOnInit() {
+    
   }
   
   save() {
@@ -32,29 +47,26 @@ export class Parte2Component implements OnInit {
       var month = new Date().getMonth();
       var año = new Date().getFullYear();
       this.fechaactual =  nday + '-' + [month+1]+ '-'+ año; 
-      console.log(this.fechaactual)
+          
+     const data = {
+      id: this.ID,
+      User: this.Usuario,
+      pass: this.Contrasena,
+      nombre: this.Nombre,
+      apellido: this.Apellidos,
+      correo: this.Correo_Electronico,
+      edad: this.Edad,
+      estatura: this.Estatura,
+      peso: this.Peso,
+      IMC: this.IMC,
+      geb: this.GEB,
+      eta: this.ETA,
+      fecha_new: this.fechaactual,
+      fecha_actu: this.fechaactual
+    }; 
+    console.log(data)
 
-    this.clientModel.Fecha_Actualizacion = this.fechaactual
-      this.clientModel.Fecha_Creacion = this.fechaactual
-
-    const data = {
-      id: this.clientModel.Cliente_ID,
-      User: this.clientModel.Nombre_Usuario,
-      pass: this.clientModel.Contraseña,
-      nombre: this.clientModel.Nombre,
-      apellido: this.clientModel.Apellidos,
-      correo: this.clientModel.Correo_Electronico,
-      edad: this.clientModel.Edad,
-      estatura: this.clientModel.Estatura,
-      peso: this.clientModel.Peso,
-      IMC: this.clientModel.IMC,
-      geb: this.clientModel.GEB,
-      eta: this.clientModel.ETA,
-      fecha_new: this.clientModel.Fecha_Creacion,
-      fecha_actu: this.clientModel.Fecha_Actualizacion,
-    };
-
-    this.servclient.create(data)
+     this.servclient.create(data)
       .subscribe(
         response => {
           console.log(response);
@@ -62,7 +74,7 @@ export class Parte2Component implements OnInit {
         },
         error => {
           console.log(error);
-        });
+        }); 
   }
 
   new() {
